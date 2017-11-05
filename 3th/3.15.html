@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>替换页面元素内容</title>
+	<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 13px;
+		}
+		span{
+			font-weight: bold;
+		}
+		p{
+			background-color: #eee;
+			padding: 5px;
+			width: 200px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			$("#Span1").replaceWith("<span title='replaceWith'>陶国荣</span>");//replaceWith(content)：其中参数content为被所选择元素替换的内容
+			$("<span title='replaceAll'>tao_guo_rong@163.com</span>").replaceAll("#Span2");//replaceAll(selector):其中参数selector为需要被替换的元素
+		});
+		
+	</script>
+</head>
+<body>
+	<p>姓名：<span id="Span1"></span></p>
+	<p>邮箱：<span id="Span2"></span></p>
+</body>
+</html>

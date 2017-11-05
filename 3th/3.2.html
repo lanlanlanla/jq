@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取元素的属性</title>
+    <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+    <style type="text/css">
+        body{
+            font-size: 12px;
+        }
+        div{
+            float:left;
+            padding-left:10px;
+        }
+        img{
+            border:solid 1px #ccc;
+            padding:3px;
+            float:left;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            var strAlt = $("img").attr("src");  //属性值
+            strAlt += "<br><br>" + $("img").attr("title");  //属性值
+            $("#divAlt").html(strAlt);  //显示在页面中
+        })
+    </script>
+</head>
+<body>
+<img src="Images/img01.jpg" alt="" title="这是一幅风景画">
+</body>
+</html>

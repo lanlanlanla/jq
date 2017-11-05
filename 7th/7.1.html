@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="Jscript/jquery-1.4.2.js"></script>
+	<script type="text/javascript" src="Js-7-1/jquery.validate.js"></script>
+	<script type="text/javascript" src="Js-7-1/jquery.validate.messages_cn.js"></script>
+	<style type="text/css">
+		
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			$("#frmV").validate({
+				// 自定义验证规则
+				rules: {
+					username: {required:true, minlength: 6},
+					email: {
+						required: true, email: true
+					}
+				},
+				//错误提示位置
+				errorPlacement: function(error, element) {
+					error.qppendTo(element.siblings("span"));
+				}
+			});
+		})
+	</script>
+</head>
+<body>
+	<form action="#" method="get" id="frmV">
+		<div class="divFrame">
+			<div class="divTitle">
+				请输入下列资料
+			</div>
+			<div class="divContent">
+				<div>
+					用户名：<br>
+					<input type="text" name="username" id="username" class="txt">
+					<font color="red">*</font><br>
+					<span></span>
+				</div>
+				<div>
+					邮箱：<br>
+					<input type="text" class="txt" id="email" name="email">
+					<font color="red">*</font><br>
+					<span></span>
+				</div>
+			</div>
+				<div class="divBtn">
+					<input type="submit" id="sbtUser" value="提交" class="btn">
+				</div>			
+		</div>
+	</form>
+</body>
+</html>

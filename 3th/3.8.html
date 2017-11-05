@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>增加元素CSS类别</title>
+	<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 15px;
+		}
+		p{
+			padding: 5px;
+			width: 220px;
+		}
+		.cls1{
+			font-weight: bold;
+			font-style: italic;
+		}
+		.cls2{
+			border: solid 1px #666;
+			background-color: #eee;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			$("p").click(function() {
+				$(this).addClass("cls1 cls2");	//同时新增两个样式类别
+			});
+		});
+	</script>
+</head>
+<body>
+	<p>Write Less Do More</p>
+</body>
+</html>

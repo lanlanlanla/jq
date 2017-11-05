@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>加载页面，用于显示内容————传统的JAvaScript方法实现Ajax功能</title>
+	<style type="text/css">
+		body{
+			font-size: 13px;
+		}
+		.divFrame{
+			width: 260px;
+			border: solid 1px #666;
+		}
+		.divFrame .divTitle{
+			padding: 5px;
+			background-color: #eee;
+		}
+		.divFrame .divContent{
+			padding: 8px;
+		}
+		.divFrame .divContent .clsShow{
+			font-size: 14px;
+		}
+		.btn{
+			border: #666 1px solid;
+			padding: 2px;
+			width: 80px;
+		}		
+	</style>
+	<script type="text/javascript">
+		var objXmlHttp = null;//声明一个空的XMLHTTP变量
+		function CreateXMLHTTP() {
+			//根据浏览器的不同，返回该变量的实体对象
+			if (window.ActiveXObject) {
+				objXmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}else{
+				if (window.XMLHttpRequest) {
+					objXmlHttp = new XMLHttpRequest();
+				}else{
+					alert("初始化XMLHTTP错误！");
+				}
+			}
+		}
+		function GetSendData() {
+			document.getElementById("divTip").innerHTML = "<img alt='' title='正在加载中...' src='Images/Loading.gif'>";//初始化内容
+			//设置发送地址变量并赋初始值
+			var strSendUrl = "b.html?date="+Date();
+			CreateXMLHTTP();//实例化XMLHttpRequest对象
+			//open方法初始化XMLHttpRequest
+			objXmlHttp.open("GET", strSendUrl, true);
+			objXmlHttp.onreadystatechange = function() {//回调事件函数
+				if (objXmlHttp.readyState == 4) {//如果请求完成加载
+					if (objXmlHttp.status == 200) {//如果响应已成功
+						//显示获取的数据
+						document.getElementById("divTip")
+						.innerHTML = objXmlHttp.responseText;
+						//responseText:作为响应主体被返回的文本。
+					}
+				}
+			}
+			objXmlHttp.send(null);//send发送设置的请求
+		}
+	</script>
+</head>
+<body>
+	<div class="divFrame">
+		<div class="divTitle">
+			<input type="button" onclick="GetSendData()" value="获取数据" class="btn" id="Button1">
+		</div>
+		<div class="divContent">
+			<div id="divTip"></div>
+		</div>
+	</div>
+</body>
+</html>

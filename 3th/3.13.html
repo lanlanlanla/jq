@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态插入function函数返回值至元素节点</title>
+	<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 13px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			$("span").after(retHtml);//插入内容
+			function retHtml() {
+				var str = "<span><b>Write Less Do More</b></span>";
+				return str;
+			}
+		});
+	</script>
+</head>
+<body>
+	<span>jQuery</span>
+</body>
+</html>

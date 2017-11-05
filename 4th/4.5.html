@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>toggle方法绑定事件</title>
+	<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 13px;
+		}
+		img{
+			border: solid 1px #ccc;
+			padding: 3px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			$("img").toggle(function() {
+				$("img").attr("src","Images/img05.jpg");
+				$("img").attr("title", this.src);
+			},function() {
+				$("img").attr("src", "Images/img06.jpg");
+				$("img").attr("title", this.src);
+			},function() {
+				$("img").attr("src", "Images/img07.jpg");
+				$("img").attr("title", this.src);
+			})
+		})
+	</script>
+</head>
+<body>
+	<img />
+	toggle()方法的功能是每次单击后依次调用的函数，请注意到“依次”这两个字，说明该方法在调用函数时并非随机或指定调用，而是通过函数设置的前后顺序时行调用，其调用的语法格式如下：
+	toggle(fn, fn2, [fn3, fn4, ...])
+</body>
+</html>

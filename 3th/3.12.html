@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>将一个元素内容动态插入另一个元素中</title>
+	<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 13px;
+		}
+		img{
+			border: solid 1px #ccc;
+			padding: 3px;
+			margin: 5px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			$("img").appendTo($("span"));//插入内容
+			//将img插入span前面
+		});
+	</script>
+</head>
+<body>
+	<img title="2008年新书封面" src="Images/img03.jpg">
+	<span><img src="Images/img04.jpg" title="2010年新书封面"></span>
+</body>
+</html>

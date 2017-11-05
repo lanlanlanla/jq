@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>toggle()方法</title>
+	<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 13px;
+		}
+		.divFrame{
+			width: 180px;
+		}
+		.divFrame .divMenu{
+			float: left;
+		}
+		.divFrame .divContent{
+			float: right;
+		}
+		.divFrame .divContent img{
+			display: none;
+		}
+		.btn{
+			border: #666 1px solid;
+			padding: 2px;
+			width: 80px;
+			margin-bottom: 5px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			$("input:eq(0)").click(function() {//无参数方法
+				$("img").toggle();
+			})
+			$("input:eq(1)").click(function() {//根据参数switch显示
+				var intI = 0;
+				var blnA = intI > 1;//获取逻辑值
+				$("img").toggle(blnA);
+			})
+			$("input:tq(2)").click(function() {//动画方式显示
+				$("img").toggle(3000, function() {
+					$(this)
+					.css({"border": "solid 1px #ccc",
+							"padding": "2px"});;
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="divFrame">
+		<div class="divMenu">
+			<input type="button" id="Button1" value="无参数" class="btn"><br>
+			<input type="button" id="Button2" value="逻辑显示" class="btn"><br>
+			<input type="button" id="Button3" value="动画显示" class="btn">
+		</div>
+		<div class="divContent">
+			<img src="Images/img03.jpg" alt="">
+		</div>
+	</div>
+</body>
+</html>

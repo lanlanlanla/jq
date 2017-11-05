@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>one方法绑定事件</title>
+	<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+	<style type="text/css">
+		.btn{
+			border: #666 1px solid;
+			padding: 2px;
+			width: 160px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			function btn_Click() {
+				this.value = "010-12345678";
+			}
+			$("input").bind("click", btn_Click);//绑定自定义事件
+		});
+	</script>
+</head>
+<body>
+	<input type="button" id="Button1" value="点击查看联系方式" class="btn">
+</body>
+</html>

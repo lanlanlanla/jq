@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用jQuery可见性过滤选择器选择元素</title>
+	<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+			text-align: center;
+		}
+		div,span{
+			float: left;
+			border: solid 1px #ccc;
+			margin: 8px;
+			width: 65px;
+			height: 65px;
+		}
+		.GetFocus{
+			border: solid 1px #666;
+			background-color: #eee;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			$("span:hidden").show();
+			$("div:visible").addClass("GetFocus");
+		});
+		$(function() {
+			$("span:hidden").show().addClass("GetFocus");
+		});
+	</script>
+</head>
+<body>
+	<span style="display:none;">Hidden</span>
+	<div>Visible</div>
+</body>
+</html>

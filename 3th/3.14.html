@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>复制元素节点</title>
+	<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+	<style type="text/css">
+		img{
+			border: solid 1px #ccc;
+			padding: 3px;
+			margin: 5px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			$("img").click(function() {
+				$(this).clone(true).appendTo('span');
+				//clone(true)：复制全部
+			});
+		});
+	</script>
+</head>
+<body>
+	<span><img src="Images/img04.jpg" alt="" title="封面"></span>
+</body>
+</html>

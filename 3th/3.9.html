@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>切换CSS的类别</title>
+	<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+	<style type="text/css">
+		.clsImg{
+			border: solid 1px #666;
+			padding: 3px;
+		}
+	</style>
+	<script type="text/javascript">		
+		$(function() {
+			$("img").click(function() {
+				$(this).toggleClass('clsImg');	//切换
+			});
+		});
+	
+	</script>
+</head>
+<body>
+	<img src="Images/logo.gif" alt="" title="jQuery">
+</body>
+</html>

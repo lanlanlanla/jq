@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hover方法绑定事件</title>
+	<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 13px;
+		}
+		.clsFrame{
+			border: solid 1px #666;
+			width: 220px;
+		}
+		.clsFrame .clsTitle{
+			background-color: #eee;
+			padding: 5px;
+			font-weight: bold;
+		}
+		.clsFrame .clsContent{
+			padding: 5px;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			$(".clsTitle").hover(function() {
+				$(".clsContent").show();
+			}, function() {
+				$(".clsContent").hide();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="clsFrame">
+		<div class="clsTitle">是jQuery简介</div>
+		<div class="clsContent">&nbsp;&nbsp;jQuery是由美国人John Resig于2006年创建一个开源项目，它的主旨是：以更少的代码，实现更多的功能(Write less, do more)。
+		</div>
+	</div>
+</body>
+</html>

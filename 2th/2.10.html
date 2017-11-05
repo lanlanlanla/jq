@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用jQuery属性过滤选择器选择元素</title>
+	<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+			text-align: center;
+		}
+		div{
+			float: left;
+			border: soild 1px #ccc;
+			margin: 8px;
+			width: 65px;
+			height: 65px;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {	//显示所有含有id属性的元素
+			$("div[id]").show(3000);
+		});
+		$(function() {	//显示所有属性title的值是"A"的元素
+			$("div[title='A']").show(3000);
+		});
+		$(function() {	//显示所有属性title的值不是"A"的元素
+			$("div[title!='A']").show(3000);
+		});
+		$(function() {	//显示所有属性title的以"A"开始的元素
+			$("div[title^='A']").show(3000);
+		});
+		$(function() {	//显示所有属性title的以"C"结束的元素
+			$("div[title$='C']").show(3000);
+		});
+		$(function() {	//显示所有属性title的值中含有"B"的元素
+			$("div[title*='B']").show(3000);
+		});
+		$(function() {	//显示所有属性title的值中含有"B"且属性id的值是"divAB"的元素
+			$("div[id='divAB'][title*='B']").show(3000);
+		});
+	</script>
+</head>
+<body>
+	<div id="divID">ID</div>
+	<div title="A">Title A</div>
+	<div id="divAB" title="AB">ID <br>Title AB</div>
+	<div title="ABC">Title ABC</div>
+</body>
+</html>
